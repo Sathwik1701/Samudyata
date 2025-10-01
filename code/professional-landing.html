@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Samudyata Infra Solutions | Leading Environmental & Infrastructure Consultancy</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0B1426',
+                        secondary: '#1A2332',
+                        accent: '#00D4AA',
+                        gold: '#FFB800',
+                        navy: '#1E3A8A',
+                        slate: '#64748B'
+                    },
+                    fontFamily: {
+                        'poppins': ['Poppins', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Poppins', sans-serif; }
+        
+        .hero-gradient {
+            background: linear-gradient(135deg, #0B1426 0%, #1A2332 50%, #00D4AA 100%);
+        }
+        
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .hover-lift {
+            transition: all 0.3s ease;
+        }
+        
+        .hover-lift:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 212, 170, 0.2);
+        }
+        
+        .text-gradient {
+            background: linear-gradient(135deg, #00D4AA, #FFB800);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .animate-float {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        .section-padding { padding: 80px 0; }
+        
+        .card-shadow {
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, #00D4AA, #00B894);
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0, 212, 170, 0.3);
+        }
+        
+        .expertise-icon {
+            background: linear-gradient(135deg, #00D4AA, #FFB800);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+    </style>
+</head>
+<body class="bg-primary text-white">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 glass-effect">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-3">
+                    <img src="logo.jpg" alt="Samudyata Logo" class="h-10 w-auto rounded-lg">
+                    <div>
+                        <h1 class="text-xl font-bold text-white">Samudyata</h1>
+                        <p class="text-xs text-accent">Infra Solutions</p>
+                    </div>
+                </div>
+                
+                <div class="hidden lg:flex space-x-8">
+                    <a href="#home" class="text-white hover:text-accent transition-colors">Home</a>
+                    <a href="#about" class="text-white hover:text-accent transition-colors">About</a>
+                    <a href="#services" class="text-white hover:text-accent transition-colors">Services</a>
+                    <a href="#team" class="text-white hover:text-accent transition-colors">Team</a>
+                    <a href="#projects" class="text-white hover:text-accent transition-colors">Projects</a>
+                    <a href="#contact" class="text-white hover:text-accent transition-colors">Contact</a>
+                </div>
+                
+                <button id="consultationBtn" class="btn-primary text-white px-6 py-2 rounded-full font-semibold">
+                    Free Consultation
+                </button>
+                
+                <button id="mobileMenu" class="lg:hidden text-white">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-gradient min-h-screen flex items-center relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute top-20 left-20 w-72 h-72 bg-accent rounded-full blur-3xl animate-pulse"></div>
+            <div class="absolute bottom-20 right-20 w-96 h-96 bg-gold rounded-full blur-3xl animate-pulse"></div>
+        </div>
+        
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="text-center lg:text-left">
+                    <div class="inline-block bg-accent/20 text-accent px-4 py-2 rounded-full text-sm font-medium mb-6">
+                        <i class="fas fa-leaf mr-2"></i>
+                        Sustainable Infrastructure Leaders
+                    </div>
+                    
+                    <h1 class="text-5xl lg:text-7xl font-bold leading-tight mb-6">
+                        Building Tomorrow's
+                        <span class="text-gradient block">Green Infrastructure</span>
+                    </h1>
+                    
+                    <p class="text-xl text-gray-300 mb-8 leading-relaxed">
+                        Expert environmental consultancy and sustainable infrastructure solutions 
+                        that create lasting positive impact for communities worldwide.
+                    </p>
+                    
+                    <div class="flex flex-col sm:flex-row gap-4 mb-12">
+                        <button class="btn-primary text-white px-8 py-4 rounded-full font-semibold text-lg">
+                            <i class="fas fa-rocket mr-2"></i>
+                            Explore Our Services
+                        </button>
+                        <button class="border-2 border-accent text-accent px-8 py-4 rounded-full font-semibold text-lg hover:bg-accent hover:text-white transition-all">
+                            <i class="fas fa-play mr-2"></i>
+                            Watch Our Story
+                        </button>
+                    </div>
+                    
+                    <div class="grid grid-cols-3 gap-8 text-center">
+                        <div>
+                            <div class="text-3xl font-bold text-accent mb-2">15+</div>
+                            <p class="text-gray-400">Years Experience</p>
+                        </div>
+                        <div>
+                            <div class="text-3xl font-bold text-accent mb-2">100+</div>
+                            <p class="text-gray-400">Projects Delivered</p>
+                        </div>
+                        <div>
+                            <div class="text-3xl font-bold text-accent mb-2">50+</div>
+                            <p class="text-gray-400">Happy Clients</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="flex justify-center">
+                    <div class="relative animate-float">
+                        <img src="as.png" alt="Sustainable Infrastructure" class="rounded-2xl shadow-2xl max-w-full h-auto">
+                        <div class="absolute -top-6 -left-6 bg-accent text-white px-4 py-2 rounded-full font-semibold">
+                            <i class="fas fa-award mr-2"></i>ISO Certified
+                        </div>
+                        <div class="absolute -bottom-6 -right-6 bg-gold text-white px-4 py-2 rounded-full font-semibold">
+                            <i class="fas fa-leaf mr-2"></i>Eco-Friendly
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section-padding bg-secondary">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl lg:text-5xl font-bold mb-6">
+                    Our <span class="text-gradient">Vision</span>
+                </h2>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+                    Empowering a greener tomorrow through innovative environmental solutions 
+                    and cutting-edge infrastructure development.
+                </p>
+            </div>
+            
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div>
+                    <div class="bg-primary p-8 rounded-2xl card-shadow">
+                        <blockquote class="text-2xl font-semibold text-white mb-6 italic">
+                            "Empowering a Greener Tomorrow Through Innovation"
+                        </blockquote>
+                        <p class="text-gray-300 leading-relaxed mb-6">
+                            At Samudyata Infra Solutions, we envision a world where environmental harmony 
+                            and sustainable practices are woven into the fabric of everyday life. Our mission 
+                            transcends traditional consultancy—we're architects of change, building bridges 
+                            between human progress and environmental stewardship.
+                        </p>
+                        
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="flex items-center space-x-3 p-4 bg-secondary rounded-lg">
+                                <div class="w-10 h-10 bg-accent rounded-full flex items-center justify-center">
+                                    <i class="fas fa-leaf text-white"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-white">Sustainability First</h4>
+                                    <p class="text-sm text-gray-300">Environmental responsibility</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-center space-x-3 p-4 bg-secondary rounded-lg">
+                                <div class="w-10 h-10 bg-gold rounded-full flex items-center justify-center">
+                                    <i class="fas fa-lightbulb text-white"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-white">Innovation Driven</h4>
+                                    <p class="text-sm text-gray-300">Cutting-edge solutions</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <img src="https://images.unsplash.com/photo-1517487881594-2787fdb08171?q=80&w=2070" 
+                         alt="Future Vision" class="rounded-2xl shadow-2xl w-full h-auto">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="section-padding bg-primary">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl lg:text-5xl font-bold mb-6">
+                    Our <span class="text-gradient">Expertise</span>
+                </h2>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+                    Comprehensive consultancy services designed to build a sustainable 
+                    and resilient future for communities worldwide.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="bg-secondary p-8 rounded-2xl hover-lift card-shadow">
+                    <div class="w-16 h-16 bg-gradient-to-br from-accent to-gold rounded-xl flex items-center justify-center mb-6">
+                        <i class="fas fa-building text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-white">Infrastructure Development</h3>
+                    <p class="text-gray-300 mb-4">
+                        Comprehensive consultancy for robust, sustainable infrastructure projects 
+                        that stand the test of time.
+                    </p>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><i class="fas fa-check text-accent mr-2"></i>Project Planning & Design</li>
+                        <li><i class="fas fa-check text-accent mr-2"></i>Sustainable Construction</li>
+                        <li><i class="fas fa-check text-accent mr-2"></i>Quality Assurance</li>
+                    </ul>
+                </div>
+                
+                <!-- Service 2 -->
+                <div class="bg-secondary p-8 rounded-2xl hover-lift card-shadow">
+                    <div class="w-16 h-16 bg-gradient-to-br from-green-500 to-emerald-600 rounded-xl flex items-center justify-center mb-6">
+                        <i class="fas fa-leaf text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-white">Environmental Management</h3>
+                    <p class="text-gray-300 mb-4">
+                        Specialized expertise in sustainable practices and comprehensive 
+                        environmental impact mitigation strategies.
+                    </p>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><i class="fas fa-check text-accent mr-2"></i>Impact Assessment</li>
+                        <li><i class="fas fa-check text-accent mr-2"></i>Compliance Management</li>
+                        <li><i class="fas fa-check text-accent mr-2"></i>Sustainability Planning</li>
+                    </ul>
+                </div>
+                
+                <!-- Service 3 -->
+                <div class="bg-secondary p-8 rounded-2xl hover-lift card-shadow">
+                    <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-xl flex items-center justify-center mb-6">
+                        <i class="fas fa-tint text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-white">Water & Wastewater Solutions</h3>
+                    <p class="text-gray-300 mb-4">
+                        Advanced water treatment, supply systems, and comprehensive 
+                        wastewater management solutions.
+                    </p>
+                    <div class="space-y-3">
+                        <div class="flex items-center space-x-3">
+                            <i class="fas fa-filter text-cyan-400"></i>
+                            <span class="text-sm text-gray-300">Advanced purification systems</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <i class="fas fa-network-wired text-blue-400"></i>
+                            <span class="text-sm text-gray-300">Efficient distribution networks</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Service 4 -->
+                <div class="bg-secondary p-8 rounded-2xl hover-lift card-shadow">
+                    <div class="w-16 h-16 bg-gradient-to-br from-green-500 to-emerald-500 rounded-xl flex items-center justify-center mb-6">
+                        <i class="fas fa-wind text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-white">Waste Management & Air Quality</h3>
+                    <p class="text-gray-300 mb-4">
+                        Efficient waste disposal solutions and advanced air quality modeling 
+                        for environmental protection.
+                    </p>
+                    <div class="space-y-3">
+                        <div class="flex items-center space-x-3">
+                            <i class="fas fa-trash-alt text-green-400"></i>
+                            <span class="text-sm text-gray-300">Solid waste management</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <i class="fas fa-cloud text-blue-400"></i>
+                            <span class="text-sm text-gray-300">Air quality modeling</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Service 5 -->
+                <div class="bg-secondary p-8 rounded-2xl hover-lift card-shadow">
+                    <div class="w-16 h-16 bg-gradient-to-br from-purple-500 to-indigo-500 rounded-xl flex items-center justify-center mb-6">
+                        <i class="fas fa-chart-line text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-white">Environmental Monitoring</h3>
+                    <p class="text-gray-300 mb-4">
+                        Real-time environmental tracking and predictive modeling for 
+                        proactive management.
+                    </p>
+                    <div class="space-y-3">
+                        <div class="flex items-center space-x-3">
+                            <i class="fas fa-satellite-dish text-purple-400"></i>
+                            <span class="text-sm text-gray-300">Continuous monitoring</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <i class="fas fa-brain text-indigo-400"></i>
+                            <span class="text-sm text-gray-300">Predictive modeling</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Service 6 -->
+                <div class="bg-secondary p-8 rounded-2xl hover-lift card-shadow">
+                    <div class="w-16 h-16 bg-gradient-to-br from-orange-500 to-red-500 rounded-xl flex items-center justify-center mb-6">
+                        <i class="fas fa-road text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-white">Transportation & Development</h3>
+                    <p class="text-gray-300 mb-4">
+                        Planning and executing efficient transportation systems and 
+                        large-scale development initiatives.
+                    </p>
+                    <div class="space-y-3">
+                        <div class="flex items-center space-x-3">
+                            <i class="fas fa-route text-orange-400"></i>
+                            <span class="text-sm text-gray-300">Transportation infrastructure</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <i class="fas fa-hammer text-red-400"></i>
+                            <span class="text-sm text-gray-300">Construction projects</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section id="team" class="section-padding bg-secondary">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl lg:text-5xl font-bold mb-6">
+                    Meet Our <span class="text-gradient">Leadership</span>
+                </h2>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+                    Led by industry experts with decades of combined experience in 
+                    sustainable infrastructure and environmental management.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-12 max-w-4xl mx-auto">
+                <!-- Leader 1 -->
+                <div class="bg-primary p-8 rounded-2xl card-shadow text-center hover-lift">
+                    <div class="relative inline-block mb-6">
+                        <div class="w-32 h-32 bg-gradient-to-br from-accent to-gold rounded-full p-1 mx-auto">
+                            <img src="Picture1.jpg" alt="D. Syamala" class="rounded-full w-full h-full object-cover">
+                        </div>
+                        <div class="absolute -bottom-2 -right-2 w-10 h-10 bg-accent rounded-full flex items-center justify-center">
+                            <i class="fas fa-check text-white"></i>
+                        </div>
+                    </div>
+                    
+                    <h3 class="text-2xl font-bold text-white mb-2">D. Syamala</h3>
+                    <div class="inline-block bg-accent text-white px-4 py-1 rounded-full text-sm font-semibold mb-4">
+                        Managing Director
+                    </div>
+                    
+                    <div class="space-y-2 mb-6">
+                        <div class="flex items-center justify-center space-x-2 text-gray-300">
+                            <i class="fas fa-graduation-cap text-accent"></i>
+                            <span class="text-sm">M.S. Civil/Environmental Engineering (USA)</span>
+                        </div>
+                        <div class="flex items-center justify-center space-x-2 text-gray-300">
+                            <i class="fas fa-certificate text-gold"></i>
+                            <span class="text-sm">B.Tech Civil Engineering</span>
+                        </div>
+                    </div>
+                    
+                    <a href="mailto:syamala@samudyata.com" class="text-accent hover:text-gold transition-colors">
+                        <i class="fas fa-envelope mr-2"></i>
+                        syamala@samudyata.com
+                    </a>
+                </div>
+                
+                <!-- Leader 2 -->
+                <div class="bg-primary p-8 rounded-2xl card-shadow text-center hover-lift">
+                    <div class="relative inline-block mb-6">
+                        <div class="w-32 h-32 bg-gradient-to-br from-gold to-accent rounded-full p-1 mx-auto">
+                            <img src="Picture2.jpg" alt="D. Ranjith Kumar" class="rounded-full w-full h-full object-cover">
+                        </div>
+                        <div class="absolute -bottom-2 -right-2 w-10 h-10 bg-gold rounded-full flex items-center justify-center">
+                            <i class="fas fa-check text-white"></i>
+                        </div>
+                    </div>
+                    
+                    <h3 class="text-2xl font-bold text-white mb-2">D. Ranjith Kumar</h3>
+                    <div class="inline-block bg-gold text-white px-4 py-1 rounded-full text-sm font-semibold mb-4">
+                        Director
+                    </div>
+                    
+                    <div class="space-y-2 mb-6">
+                        <div class="flex items-center justify-center space-x-2 text-gray-300">
+                            <i class="fas fa-graduation-cap text-accent"></i>
+                            <span class="text-sm">M.S. Civil/Environmental Engineering (USA)</span>
+                        </div>
+                        <div class="flex items-center justify-center space-x-2 text-gray-300">
+                            <i class="fas fa-certificate text-gold"></i>
+                            <span class="text-sm">B.E Civil Engineering</span>
+                        </div>
+                        <div class="flex items-center justify-center space-x-2 text-gray-300">
+                            <i class="fas fa-balance-scale text-blue-400"></i>
+                            <span class="text-sm">L.L.B.</span>
+                        </div>
+                    </div>
+                    
+                    <a href="mailto:ranjith@samudyata.com" class="text-accent hover:text-gold transition-colors">
+                        <i class="fas fa-envelope mr-2"></i>
+                        ranjith@samudyata.com
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section-padding bg-primary">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl lg:text-5xl font-bold mb-6">
+                    Featured <span class="text-gradient">Projects</span>
+                </h2>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+                    Showcasing our commitment to excellence and sustainability across various domains.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project 1 -->
+                <div class="bg-secondary rounded-2xl overflow-hidden hover-lift card-shadow">
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="bg-accent text-white px-3 py-1 rounded-full text-xs font-semibold">Design Project</span>
+                            <span class="text-gray-400 text-sm">June 2021</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3">Goodyear Nitrate Treatment System</h3>
+                        <p class="text-gray-300 text-sm mb-4">Location: USA. Advanced nitrate treatment facility design for industrial applications.</p>
+                        <button class="text-accent font-semibold hover:text-gold transition-colors">
+                            Learn More <i class="fas fa-arrow-right ml-2"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Project 2 -->
+                <div class="bg-secondary rounded-2xl overflow-hidden hover-lift card-shadow">
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="bg-gold text-white px-3 py-1 rounded-full text-xs font-semibold">ESIA Study</span>
+                            <span class="text-gray-400 text-sm">June 2020</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3">ESIA for Morena Town MPUDP</h3>
+                        <p class="text-gray-300 text-sm mb-4">Location: Madhya Pradesh. Comprehensive environmental and social impact assessment.</p>
+                        <button class="text-accent font-semibold hover:text-gold transition-colors">
+                            Learn More <i class="fas fa-arrow-right ml-2"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Project 3 -->
+                <div class="bg-secondary rounded-2xl overflow-hidden hover-lift card-shadow">
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="bg-blue-500 text-white px-3 py-1 rounded-full text-xs font-semibold">Infrastructure</span>
+                            <span class="text-gray-400 text-sm">Oct 2020</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3">NTUA 5 Lift Stations Design</h3>
+                        <p class="text-gray-300 text-sm mb-4">Location: USA. Design of five lift stations for water distribution network.</p>
+                        <button class="text-accent font-semibold hover:text-gold transition-colors">
+                            Learn More <i class="fas fa-arrow-right ml-2"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <button id="viewAllProjects" class="btn-primary text-white px-8 py-3 rounded-full font-semibold">
+                    View All Projects
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section-padding bg-gradient-to-r from-accent to-gold">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-4xl lg:text-5xl font-bold text-white mb-6">
+                Ready to Build a Greener Future?
+            </h2>
+            <p class="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
+                Contact Samudyata Infra Solutions today for innovative and sustainable infrastructure solutions.
+            </p>
+            <button id="ctaConsultation" class="bg-white text-accent px-10 py-4 rounded-full text-xl font-bold hover:bg-gray-100 transition-all">
+                Get Your Free Consultation
+            </button>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <footer id="contact" class="section-padding bg-secondary">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Company Info -->
+                <div class="lg:col-span-2">
+                    <div class="flex items-center mb-6">
+                        <img src="logo.jpg" alt="Samudyata Logo" class="h-10 w-auto mr-3">
+                        <div>
+                            <h3 class="text-2xl font-bold text-white">Samudyata</h3>
+                            <p class="text-accent">Infra Solutions</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 mb-6 leading-relaxed">
+                        Pioneering sustainable infrastructure solutions that build a better tomorrow 
+                        for communities and the environment.
+                    </p>
+                    
+                    <div class="space-y-3">
+                        <div class="flex items-center space-x-3">
+                            <i class="fas fa-map-marker-alt text-accent"></i>
+                            <span class="text-gray-300">Mancherial, Telangana, India</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <i class="fas fa-envelope text-accent"></i>
+                            <span class="text-gray-300">info@samudyata.com</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <i class="fas fa-phone text-accent"></i>
+                            <span class="text-gray-300">+91 0029129102320</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-xl font-bold text-white mb-6">Quick Links</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#home" class="text-gray-300 hover:text-accent transition-colors">Home</a></li>
+                        <li><a href="#about" class="text-gray-300 hover:text-accent transition-colors">About</a></li>
+                        <li><a href="#services" class="text-gray-300 hover:text-accent transition-colors">Services</a></li>
+                        <li><a href="#team" class="text-gray-300 hover:text-accent transition-colors">Team</a></li>
+                        <li><a href="#projects" class="text-gray-300 hover:text-accent transition-colors">Projects</a></li>
+                        <li><a href="#contact" class="text-gray-300 hover:text-accent transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Services -->
+                <div>
+                    <h4 class="text-xl font-bold text-white mb-6">Our Services</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-300 hover:text-accent transition-colors">Infrastructure Development</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-accent transition-colors">Environmental Management</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-accent transition-colors">Water Solutions</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-accent transition-colors">Waste Management</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-accent transition-colors">Transportation</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-12 pt-8 text-center">
+                <p class="text-gray-400">&copy; 2025 Samudyata Infra Solutions. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Consultation Modal -->
+    <div id="consultationModal" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 hidden items-center justify-center">
+        <div class="bg-secondary p-8 rounded-2xl max-w-md w-full mx-4 relative">
+            <button id="closeModal" class="absolute top-4 right-4 text-gray-400 hover:text-white">
+                <i class="fas fa-times text-xl"></i>
+            </button>
+            
+            <h3 class="text-2xl font-bold text-white mb-6">Schedule Consultation</h3>
+            
+            <form id="consultationForm" class="space-y-4">
+                <div>
+                    <label class="block text-white mb-2">Name</label>
+                    <input type="text" class="w-full px-4 py-3 bg-primary text-white rounded-lg border border-gray-600 focus:border-accent outline-none" required>
+                </div>
+                <div>
+                    <label class="block text-white mb-2">Email</label>
+                    <input type="email" class="w-full px-4 py-3 bg-primary text-white rounded-lg border border-gray-600 focus:border-accent outline-none" required>
+                </div>
+                <div>
+                    <label class="block text-white mb-2">Phone</label>
+                    <input type="tel" class="w-full px-4 py-3 bg-primary text-white rounded-lg border border-gray-600 focus:border-accent outline-none" required>
+                </div>
+                <div>
+                    <label class="block text-white mb-2">Message</label>
+                    <textarea rows="4" class="w-full px-4 py-3 bg-primary text-white rounded-lg border border-gray-600 focus:border-accent outline-none" required></textarea>
+                </div>
+                <button type="submit" class="w-full btn-primary text-white py-3 rounded-lg font-semibold">
+                    Send Message
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobileMenu').addEventListener('click', function() {
+            // Add mobile menu functionality here
+        });
+
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Modal functionality
+        const consultationBtns = ['consultationBtn', 'ctaConsultation'];
+        const modal = document.getElementById('consultationModal');
+        const closeModal = document.getElementById('closeModal');
+
+        consultationBtns.forEach(btnId => {
+            document.getElementById(btnId).addEventListener('click', () => {
+                modal.classList.remove('hidden');
+                modal.classList.add('flex');
+            });
+        });
+
+        closeModal.addEventListener('click', () => {
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        });
+
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.classList.add('hidden');
+                modal.classList.remove('flex');
+            }
+        });
+
+        // Form submission
+        document.getElementById('consultationForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your interest! We will contact you soon.');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+            this.reset();
+        });
+
+        // Scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements for animation
+        document.querySelectorAll('.hover-lift').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'all 0.6s ease';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>

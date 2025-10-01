@@ -1,0 +1,1314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Samudyata Infra Solutions - Sustainable Infrastructure & Environmental Consultancy</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-dark: #0c1426;
+            --secondary-dark: #1a2332;
+            --accent-blue: #3b82f6;
+            --accent-cyan: #0ea5e9;
+            --accent-indigo: #6366f1;
+            --accent-sky: #0284c7;
+            --success-blue: #0891b2;
+            --background-dark: #020617;
+            --text-light: #f1f5f9;
+            --text-muted: #cbd5e1;
+            --border-dark: #334155;
+        }
+        
+        * {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--background-dark);
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+        
+        /* Bluish Dark Theme Colors */
+        .text-primary { color: var(--text-light); }
+        .bg-primary { background-color: var(--primary-dark); }
+        .bg-secondary { background-color: var(--secondary-dark); }
+        .bg-accent { background-color: var(--accent-blue); }
+        .bg-accent-cyan { background-color: var(--accent-cyan); }
+        .bg-accent-indigo { background-color: var(--accent-indigo); }
+        .bg-accent-sky { background-color: var(--accent-sky); }
+        .text-success { color: var(--success-blue); }
+        .text-cyan { color: var(--accent-cyan); }
+        .text-indigo { color: var(--accent-indigo); }
+        .text-sky { color: var(--accent-sky); }
+        .text-blue { color: var(--accent-blue); }
+        .text-muted { color: var(--text-muted); }
+        .border-dark { border-color: var(--border-dark); }
+        
+        /* Enhanced Animations */
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+        
+        .fade-in-left {
+            opacity: 0;
+            transform: translateX(-30px);
+            animation: fadeInLeft 0.8s ease-out forwards;
+        }
+        
+        .fade-in-right {
+            opacity: 0;
+            transform: translateX(30px);
+            animation: fadeInRight 0.8s ease-out forwards;
+        }
+        
+        @keyframes fadeInUp {
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        @keyframes fadeInLeft {
+            to { opacity: 1; transform: translateX(0); }
+        }
+        
+        @keyframes fadeInRight {
+            to { opacity: 1; transform: translateX(0); }
+        }
+        
+        /* Staggered animations */
+        .animate-delay-100 { animation-delay: 0.1s; }
+        .animate-delay-200 { animation-delay: 0.2s; }
+        .animate-delay-300 { animation-delay: 0.3s; }
+        .animate-delay-400 { animation-delay: 0.4s; }
+        
+        /* Enhanced hover effects */
+        .card-hover {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        }
+        
+        /* Bluish Gradient backgrounds */
+        .gradient-bg {
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--secondary-dark) 30%, var(--accent-blue) 70%, var(--accent-cyan) 100%);
+        }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, var(--accent-blue), var(--accent-cyan), var(--accent-indigo));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .gradient-card {
+            background: linear-gradient(135deg, var(--secondary-dark) 0%, var(--primary-dark) 100%);
+        }
+        
+        .vibrant-glow {
+            box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+        }
+        
+        .vibrant-glow:hover {
+            box-shadow: 0 0 30px rgba(59, 130, 246, 0.5);
+        }
+        
+        /* Enhanced modal */
+        .modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(4px);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .modal.open {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .modal-content {
+            background: var(--secondary-dark);
+            border: 1px solid var(--border-dark);
+            padding: 2.5rem;
+            border-radius: 1rem;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            width: 90%;
+            max-width: 500px;
+            transform: scale(0.9) translateY(-20px);
+            transition: all 0.3s ease;
+        }
+        
+        .modal.open .modal-content {
+            transform: scale(1) translateY(0);
+        }
+        
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: var(--primary-dark);
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: var(--accent-blue);
+            border-radius: 4px;
+        }
+        
+        /* Section dividers */
+        .section-divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--accent-blue), transparent);
+            margin: 4rem 0;
+        }
+        
+        /* Stats counter animation */
+        .stat-number {
+            font-weight: 800;
+            font-size: 2.5rem;
+            color: var(--accent-blue);
+        }
+    </style>
+</head>
+<body class="bg-primary text-light">
+
+    <!-- Enhanced Header & Navigation -->
+    <header class="bg-secondary border-b border-dark shadow-2xl sticky top-0 z-50 backdrop-blur-sm">
+        <nav class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <!-- Enhanced Logo Section -->
+                <div class="flex items-center space-x-3 fade-in-left">
+                    <div class="relative">
+                        <img src="logo.jpg" alt="Samudyata Logo" class="h-12 w-auto rounded-lg shadow-md">
+                        <div class="absolute -top-1 -right-1 w-4 h-4 bg-accent-cyan rounded-full animate-pulse"></div>
+                    </div>
+                    <div>
+                        <span class="text-2xl font-bold text-white">Samudyata</span>
+                        <p class="text-xs text-blue-200 -mt-1">Infra Solutions</p>
+                    </div>
+                </div>
+                
+                <!-- Enhanced Desktop Navigation -->
+                <ul class="hidden lg:flex space-x-8 font-medium">
+                    <li><a href="#home" class="nav-link relative py-2 px-3 rounded-lg hover:bg-white/10 transition-all duration-300">Home</a></li>
+                    <li><a href="#expertise" class="nav-link relative py-2 px-3 rounded-lg hover:bg-white/10 transition-all duration-300">Expertise</a></li>
+                    <li><a href="#projects" class="nav-link relative py-2 px-3 rounded-lg hover:bg-white/10 transition-all duration-300">Projects</a></li>
+                    <li><a href="#leadership" class="nav-link relative py-2 px-3 rounded-lg hover:bg-white/10 transition-all duration-300">Leadership</a></li>
+                    <li><a href="#why-choose-us" class="nav-link relative py-2 px-3 rounded-lg hover:bg-white/10 transition-all duration-300">Why Us</a></li>
+                    <li><a href="#contact" class="nav-link relative py-2 px-3 rounded-lg hover:bg-white/10 transition-all duration-300">Contact</a></li>
+                </ul>
+                
+                <!-- Enhanced CTA Button -->
+                <div class="hidden md:flex items-center space-x-4">
+                    <button id="openAppointmentModal" class="bg-accent text-white px-6 py-3 rounded-full font-bold hover:bg-blue-600 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 vibrant-glow">
+                        <i class="fas fa-calendar-alt mr-2 text-white"></i>
+                        Book Consultation
+                    </button>
+                </div>
+                
+                <!-- Enhanced Mobile Menu Button -->
+                <button id="mobileMenuBtn" class="lg:hidden text-white focus:outline-none p-2 rounded-lg hover:bg-white/10 transition-all duration-300">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+            
+            <!-- Mobile Menu -->
+            <div id="mobileMenu" class="lg:hidden mt-4 pb-4 hidden">
+                <div class="flex flex-col space-y-3">
+                    <a href="#home" class="mobile-nav-link py-3 px-4 rounded-lg hover:bg-white/10 transition-all duration-300">Home</a>
+                    <a href="#expertise" class="mobile-nav-link py-3 px-4 rounded-lg hover:bg-white/10 transition-all duration-300">Expertise</a>
+                    <a href="#projects" class="mobile-nav-link py-3 px-4 rounded-lg hover:bg-white/10 transition-all duration-300">Projects</a>
+                    <a href="#leadership" class="mobile-nav-link py-3 px-4 rounded-lg hover:bg-white/10 transition-all duration-300">Leadership</a>
+                    <a href="#why-choose-us" class="mobile-nav-link py-3 px-4 rounded-lg hover:bg-white/10 transition-all duration-300">Why Us</a>
+                    <a href="#contact" class="mobile-nav-link py-3 px-4 rounded-lg hover:bg-white/10 transition-all duration-300">Contact</a>
+                    <button id="openAppointmentModalMobile" class="bg-accent text-white px-6 py-3 rounded-full font-bold hover:bg-violet-600 transition-all duration-300 shadow-lg mt-4 vibrant-glow">
+                        <i class="fas fa-calendar-alt mr-2 text-white"></i>
+                        Book Consultation
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Enhanced Hero Section -->
+    <section id="home" class="relative gradient-bg text-white py-24 lg:py-32 overflow-hidden">
+        <!-- Enhanced Background with Overlay -->
+        <div class="absolute inset-0 bg-gradient-to-br from-blue-900/50 to-blue-800/30"></div>
+        <div class="absolute inset-0 bg-cover bg-center opacity-20" style="background-image: url('https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2069');"></div>
+        
+        <!-- Floating Elements -->
+        <div class="absolute top-20 left-10 w-20 h-20 bg-white/10 rounded-full blur-xl animate-pulse"></div>
+        <div class="absolute bottom-20 right-10 w-32 h-32 bg-blue-300/20 rounded-full blur-2xl animate-pulse" style="animation-delay: 1s;"></div>
+        
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="flex flex-col lg:flex-row items-center justify-between gap-12">
+                <!-- Enhanced Content Section -->
+                <div class="lg:w-1/2 text-center lg:text-left">
+                    <div class="fade-in-up animate-delay-100">
+                        <span class="inline-block bg-accent/20 text-cyan-300 px-4 py-2 rounded-full text-sm font-medium mb-6 backdrop-blur-sm border border-accent/30">
+                            <i class="fas fa-leaf mr-2"></i>
+                            Welcome To Samudyata Infra Solutions
+                        </span>
+                    </div>
+                    
+                    <h1 class="text-5xl lg:text-7xl font-extrabold leading-tight mb-6 fade-in-up animate-delay-200">
+                        <span class="block text-white">Pioneering</span>
+                        <span class="gradient-text block">Sustainable</span>
+                        <span class="block text-white">Infrastructure</span>
+                    </h1>
+                    
+                    <p class="text-xl lg:text-2xl mb-8 text-slate-300 leading-relaxed fade-in-up animate-delay-300">
+                        Transforming communities through innovative environmental solutions and cutting-edge infrastructure development.
+                    </p>
+                    
+                    <!-- Enhanced Stats -->
+                    <div class="grid grid-cols-3 gap-6 mb-8 fade-in-up animate-delay-400">
+                        <div class="text-center">
+                            <div class="stat-number text-white">15+</div>
+                            <p class="text-slate-400 text-sm">Years Experience</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="stat-number text-white">100+</div>
+                            <p class="text-slate-400 text-sm">Projects Completed</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="stat-number text-white">50+</div>
+                            <p class="text-slate-400 text-sm">Happy Clients</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Enhanced CTA Buttons -->
+                    <div class="flex flex-col sm:flex-row gap-4 fade-in-up animate-delay-500">
+                        <a href="#expertise" class="group bg-accent text-white px-8 py-4 rounded-full text-lg font-bold hover:bg-violet-600 transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:scale-105 flex items-center justify-center vibrant-glow">
+                            <i class="fas fa-rocket mr-2 group-hover:animate-bounce text-white"></i>
+                            Explore Our Expertise
+                        </a>
+                        <a href="#contact" class="group bg-accent-cyan text-white px-8 py-4 rounded-full text-lg font-bold hover:bg-emerald-600 transition-all duration-300 flex items-center justify-center shadow-xl">
+                            <i class="fas fa-comments mr-2 group-hover:animate-pulse text-white"></i>
+                            Get Free Consultation
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Enhanced Image Section -->
+                <div class="lg:w-1/2 flex justify-center lg:justify-end fade-in-right animate-delay-300">
+                    <div class="relative">
+                        <div class="absolute -inset-4 bg-gradient-to-r from-blue-400 to-green-400 rounded-2xl blur-lg opacity-30 animate-pulse"></div>
+                        <img src="as.png" alt="Sustainable Infrastructure Concept" class="relative rounded-2xl shadow-2xl max-w-full h-auto lg:max-w-xl transform hover:scale-105 transition-transform duration-500">
+                        
+                        <!-- Floating badge -->
+                        <div class="absolute -bottom-4 -right-4 bg-success text-white px-4 py-2 rounded-full shadow-lg font-semibold text-sm animate-bounce">
+                            <i class="fas fa-leaf mr-1"></i>
+                            Eco-Friendly
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Enhanced About Us / Vision Section -->
+    <section id="vision" class="py-20 bg-secondary relative overflow-hidden">
+        <!-- Background Pattern -->
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute inset-0" style="background-image: radial-gradient(circle at 1px 1px, var(--accent-purple) 1px, transparent 0); background-size: 20px 20px;"></div>
+        </div>
+        
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="flex flex-col lg:flex-row items-center gap-16">
+                <!-- Enhanced Content Section -->
+                <div class="lg:w-1/2 text-center lg:text-left">
+                    <div class="fade-in-up">
+                        <span class="inline-block bg-accent/20 text-accent px-4 py-2 rounded-full text-sm font-semibold mb-6 border border-accent/30">
+                            <i class="fas fa-info-circle mr-2"></i>
+                            About Samudyata
+                        </span>
+                    </div>
+                    
+                    <h2 class="text-4xl lg:text-6xl font-extrabold text-white mb-6 fade-in-up animate-delay-100">
+                        Our <span class="text-success">Vision</span>
+                    </h2>
+                    
+                    <div class="relative mb-8 fade-in-up animate-delay-200">
+                        <div class="absolute left-0 top-0 w-1 h-full bg-gradient-to-b from-accent to-success rounded-full"></div>
+                        <blockquote class="text-2xl lg:text-3xl font-bold text-white pl-8 italic">
+                            "Empowering a Greener Tomorrow Through Innovation"
+                        </blockquote>
+                    </div>
+                    
+                    <div class="space-y-6 fade-in-up animate-delay-300">
+                        <p class="text-lg leading-relaxed text-slate-300">
+                            At Samudyata Infra Solutions, we envision a world where environmental harmony and sustainable practices are woven into the fabric of everyday life. Our mission transcends traditional consultancy—we're architects of change, building bridges between human progress and environmental stewardship.
+                        </p>
+                        
+                        <!-- Key Values -->
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-8">
+                            <div class="flex items-center space-x-3 p-4 bg-secondary/80 rounded-lg border border-accent/30 vibrant-glow">
+                                <div class="w-10 h-10 bg-accent rounded-full flex items-center justify-center">
+                                    <i class="fas fa-leaf text-white"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-white">Sustainability First</h4>
+                                    <p class="text-sm text-slate-300">Environmental responsibility in every project</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-center space-x-3 p-4 bg-secondary/80 rounded-lg border border-success/30 vibrant-glow">
+                                <div class="w-10 h-10 bg-success rounded-full flex items-center justify-center">
+                                    <i class="fas fa-lightbulb text-white"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-white">Innovation Driven</h4>
+                                    <p class="text-sm text-slate-300">Cutting-edge solutions for modern challenges</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Enhanced Image Section -->
+                <div class="lg:w-1/2 flex justify-center fade-in-right animate-delay-200">
+                    <div class="relative">
+                        <!-- Main Image -->
+                        <div class="relative overflow-hidden rounded-2xl shadow-2xl">
+                            <img src="https://images.unsplash.com/photo-1517487881594-2787fdb08171?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Future Vision" class="w-full h-auto transform hover:scale-110 transition-transform duration-700">
+                            <div class="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent"></div>
+                        </div>
+                        
+                        <!-- Floating Stats Card -->
+                        <div class="absolute -bottom-6 -left-6 bg-secondary p-6 rounded-xl shadow-xl border border-accent/30 vibrant-glow">
+                            <div class="text-center">
+                                <div class="text-3xl font-bold text-accent mb-1">98%</div>
+                                <p class="text-sm text-slate-300">Client Satisfaction</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Decorative Elements -->
+                        <div class="absolute -top-4 -right-4 w-24 h-24 bg-gradient-to-br from-accent to-success rounded-full opacity-20 animate-pulse"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Section Divider -->
+        <div class="section-divider"></div>
+    </section>
+
+    <!-- Enhanced Leadership Section -->
+    <section id="leadership" class="py-20 bg-gradient-to-br from-primary to-secondary relative">
+        <div class="container mx-auto px-6">
+            <!-- Section Header -->
+            <div class="text-center mb-16">
+                <span class="inline-block bg-accent/20 text-accent px-4 py-2 rounded-full text-sm font-semibold mb-6 shadow-md fade-in-up border border-accent/30">
+                    <i class="fas fa-users mr-2"></i>
+                    Our Leadership Team
+                </span>
+                <h2 class="text-4xl lg:text-6xl font-extrabold text-light mb-6 fade-in-up animate-delay-100">
+                    Meet Our <span class="text-success">Visionaries</span>
+                </h2>
+                <p class="text-xl text-slate-300 max-w-3xl mx-auto fade-in-up animate-delay-200">
+                    Led by industry experts with decades of combined experience in sustainable infrastructure and environmental management.
+                </p>
+            </div>
+
+            <!-- Founders Section -->
+            <div class="mb-16">
+                <h3 class="text-3xl font-bold text-light mb-12 text-center fade-in-up animate-delay-300">
+                    <i class="fas fa-crown mr-3 text-accent"></i>
+                    Founding Partners
+                </h3>
+                
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
+                    <!-- Enhanced Founder Card 1 -->
+                    <div class="bg-secondary p-8 rounded-2xl shadow-xl card-hover fade-in-up animate-delay-400 relative overflow-hidden border border-dark h-full">
+                        <!-- Background Pattern -->
+                        <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-accent/20 to-success/20 rounded-full -translate-y-16 translate-x-16"></div>
+                        
+                        <div class="relative z-10 text-center h-full flex flex-col justify-between">
+                            <div>
+                                <!-- Enhanced Profile Image -->
+                                <div class="relative inline-block mb-6">
+                                    <div class="w-40 h-40 bg-gradient-to-br from-accent to-cyan rounded-full p-1 mx-auto">
+                                        <img src="Picture1.jpg" alt="D. Syamala" class="rounded-full w-full h-full object-cover bg-secondary">
+                                    </div>
+                                    <div class="absolute -bottom-2 -right-2 w-12 h-12 rounded-full flex items-center justify-center shadow-lg z-10" style="background-color: #3B82F6;">
+                                        <i class="fas fa-check text-white text-lg"></i>
+                                    </div>
+                                </div>
+                                
+                                <h4 class="text-2xl font-bold text-white mb-2">D. Syamala</h4>
+                                <div class="inline-block bg-accent text-white px-4 py-1 rounded-full text-sm font-semibold mb-6">
+                                    Managing Director
+                                </div>
+                                
+                                <!-- Qualifications with Icons -->
+                                <div class="space-y-3 mb-6">
+                                    <div class="flex items-center justify-center space-x-2 text-slate-300">
+                                        <i class="fas fa-graduation-cap text-accent"></i>
+                                        <span class="text-sm">M.S. Civil/Environmental Engineering (USA)</span>
+                                    </div>
+                                    <div class="flex items-center justify-center space-x-2 text-slate-300">
+                                        <i class="fas fa-certificate text-success"></i>
+                                        <span class="text-sm">B.Tech Civil Engineering</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Contact Info -->
+                            <div class="border-t border-slate-600 pt-4 mt-auto">
+                                <a href="mailto:syamala@samudyata.com" class="inline-flex items-center space-x-2 text-accent hover:text-accent-cyan transition-colors duration-300">
+                                    <i class="fas fa-envelope"></i>
+                                    <span class="font-medium">syamala@samudyata.com</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Enhanced Founder Card 2 -->
+                    <div class="bg-secondary p-8 rounded-2xl shadow-xl card-hover fade-in-up animate-delay-500 relative overflow-hidden border border-dark h-full">
+                        <!-- Background Pattern -->
+                        <div class="absolute top-0 left-0 w-32 h-32 bg-gradient-to-br from-success/20 to-accent/20 rounded-full -translate-y-16 -translate-x-16"></div>
+                        
+                        <div class="relative z-10 text-center h-full flex flex-col justify-between">
+                            <div>
+                                <!-- Enhanced Profile Image -->
+                                <div class="relative inline-block mb-6">
+                                    <div class="w-40 h-40 bg-gradient-to-br from-success to-accent rounded-full p-1 mx-auto">
+                                        <img src="Picture2.jpg" alt="D. Ranjith Kumar" class="rounded-full w-full h-full object-cover bg-secondary">
+                                    </div>
+                                    <div class="absolute -bottom-2 -right-2 w-12 h-12 bg-accent rounded-full flex items-center justify-center shadow-lg">
+                                        <i class="fas fa-check text-white text-lg"></i>
+                                    </div>
+                                </div>
+                                
+                                <h4 class="text-2xl font-bold text-white mb-2">D. Ranjith Kumar</h4>
+                                <div class="inline-block text-white px-4 py-1 rounded-full text-sm font-semibold mb-6" style="background-color: #3B82F6;">
+                                    Director
+                                </div>
+                                
+                                <!-- Qualifications with Icons -->
+                                <div class="space-y-3 mb-6">
+                                    <div class="flex items-center justify-center space-x-2 text-slate-300">
+                                        <i class="fas fa-graduation-cap text-accent"></i>
+                                        <span class="text-sm">M.S. Civil/Environmental Engineering (USA)</span>
+                                    </div>
+                                    <div class="flex items-center justify-center space-x-2 text-slate-300">
+                                        <i class="fas fa-certificate text-success"></i>
+                                        <span class="text-sm">B.E Civil Engineering</span>
+                                    </div>
+                                    <div class="flex items-center justify-center space-x-2 text-slate-300">
+                                        <i class="fas fa-balance-scale text-accent-cyan"></i>
+                                        <span class="text-sm">L.L.B.</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Contact Info -->
+                            <div class="border-t border-slate-600 pt-4 mt-auto">
+                                <a href="mailto:ranjith@samudyata.com" class="inline-flex items-center space-x-2 text-accent hover:text-accent-cyan transition-colors duration-300">
+                                    <i class="fas fa-envelope"></i>
+                                    <span class="font-medium">ranjith@samudyata.com</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Enhanced Core Expertise Section -->
+    <section id="expertise" class="py-20 gradient-bg text-white relative overflow-hidden">
+        <!-- Background Elements -->
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute top-20 left-20 w-40 h-40 bg-white rounded-full blur-3xl animate-pulse"></div>
+            <div class="absolute bottom-20 right-20 w-60 h-60 bg-blue-300 rounded-full blur-3xl animate-pulse" style="animation-delay: 1s;"></div>
+        </div>
+        
+        <div class="container mx-auto px-6 relative z-10">
+            <!-- Section Header -->
+            <div class="text-center mb-16">
+                <span class="inline-block bg-accent/20 text-accent px-4 py-2 rounded-full text-sm font-semibold mb-6 backdrop-blur-sm fade-in-up border border-accent/30">
+                    <i class="fas fa-cogs mr-2"></i>
+                    Our Expertise Areas
+                </span>
+                <h2 class="text-4xl lg:text-6xl font-extrabold mb-6 fade-in-up animate-delay-100 text-white">
+                    Core <span class="text-success">Expertise</span>
+                </h2>
+                <p class="text-xl lg:text-2xl text-slate-300 max-w-3xl mx-auto fade-in-up animate-delay-200">
+                    Comprehensive consultancy services designed to build a sustainable and resilient future for communities worldwide.
+                </p>
+            </div>
+
+            <!-- Enhanced Expertise Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+                <!-- Enhanced Expertise Card 1 -->
+                <div class="bg-secondary/95 backdrop-blur-sm text-slate-200 p-8 rounded-2xl shadow-xl card-hover fade-in-up animate-delay-300 relative overflow-hidden group border border-dark">
+                    <div class="absolute inset-0 bg-gradient-to-br from-accent/10 to-success/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <div class="relative z-10">
+                        <div class="w-16 h-16 bg-gradient-to-br from-accent to-success rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                            <i class="fas fa-building text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4 text-white group-hover:text-accent transition-colors duration-300">
+                            Infrastructure Development
+                        </h3>
+                        <p class="text-slate-300 leading-relaxed mb-4">
+                            Comprehensive consultancy for robust, sustainable infrastructure projects that stand the test of time.
+                        </p>
+                        <ul class="space-y-2 text-sm text-slate-400">
+                            <li class="flex items-center"><i class="fas fa-check text-success mr-2"></i>Project Planning & Design</li>
+                            <li class="flex items-center"><i class="fas fa-check text-success mr-2"></i>Sustainable Construction</li>
+                            <li class="flex items-center"><i class="fas fa-check text-success mr-2"></i>Quality Assurance</li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Enhanced Expertise Card 2 -->
+                <div class="bg-secondary/95 backdrop-blur-sm text-slate-200 p-8 rounded-2xl shadow-xl card-hover fade-in-up animate-delay-400 relative overflow-hidden group border border-dark">
+                    <div class="absolute inset-0 bg-gradient-to-br from-success/10 to-accent/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <div class="relative z-10">
+                        <div class="w-16 h-16 bg-gradient-to-br from-success to-emerald-600 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                            <i class="fas fa-leaf text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4 text-white group-hover:text-success transition-colors duration-300">
+                            Environmental Management
+                        </h3>
+                        <p class="text-slate-300 leading-relaxed mb-4">
+                            Specialized expertise in sustainable practices and comprehensive environmental impact mitigation strategies.
+                        </p>
+                        <ul class="space-y-2 text-sm text-slate-400">
+                            <li class="flex items-center"><i class="fas fa-check text-success mr-2"></i>Impact Assessment</li>
+                            <li class="flex items-center"><i class="fas fa-check text-success mr-2"></i>Compliance Management</li>
+                            <li class="flex items-center"><i class="fas fa-check text-success mr-2"></i>Sustainability Planning</li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Enhanced Expertise Card 3 -->
+                <div class="bg-secondary/95 backdrop-blur-sm text-slate-200 p-8 rounded-2xl shadow-xl card-hover fade-in-up animate-delay-500 relative overflow-hidden group border border-dark">
+                    <div class="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-cyan-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <div class="relative z-10">
+                        <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                            <i class="fas fa-tint text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4 text-white group-hover:text-cyan transition-colors duration-300">
+                            Water & Wastewater Solutions
+                        </h3>
+                        <p class="text-slate-300 leading-relaxed mb-4">
+                            Advanced water treatment, supply systems, and comprehensive wastewater management solutions.
+                        </p>
+                        <div class="space-y-3">
+                            <div class="flex items-start space-x-3">
+                                <div class="w-6 h-6 bg-blue-100/20 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                                    <i class="fas fa-filter text-cyan text-xs"></i>
+                                </div>
+                                <div>
+                                    <h5 class="font-semibold text-sm text-white">Water Treatment</h5>
+                                    <p class="text-xs text-slate-400">Advanced purification systems</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start space-x-3">
+                                <div class="w-6 h-6 bg-cyan-100/20 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                                    <i class="fas fa-network-wired text-blue-400 text-xs"></i>
+                                </div>
+                                <div>
+                                    <h5 class="font-semibold text-sm text-white">Distribution Networks</h5>
+                                    <p class="text-xs text-slate-400">Efficient water supply systems</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start space-x-3">
+                                <div class="w-6 h-6 bg-blue-100/20 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                                    <i class="fas fa-recycle text-cyan text-xs"></i>
+                                </div>
+                                <div>
+                                    <h5 class="font-semibold text-sm text-white">Wastewater Management</h5>
+                                    <p class="text-xs text-slate-400">Collection & treatment solutions</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Enhanced Expertise Card 4 -->
+                <div class="bg-secondary/95 backdrop-blur-sm text-slate-200 p-8 rounded-2xl shadow-xl card-hover fade-in-up animate-delay-600 relative overflow-hidden group border border-dark">
+                    <div class="absolute inset-0 bg-gradient-to-br from-green-500/10 to-emerald-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <div class="relative z-10">
+                        <div class="w-16 h-16 bg-gradient-to-br from-green-500 to-emerald-500 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                            <i class="fas fa-wind text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4 text-white group-hover:text-success transition-colors duration-300">
+                            Waste Management & Air Quality
+                        </h3>
+                        <div class="space-y-4">
+                            <div>
+                                <h5 class="font-semibold text-white mb-2 flex items-center">
+                                    <i class="fas fa-trash-alt text-success mr-2"></i>
+                                    Solid Waste Management
+                                </h5>
+                                <p class="text-sm text-slate-300">Efficient, environmentally sound waste disposal and recycling solutions.</p>
+                            </div>
+                            <div>
+                                <h5 class="font-semibold text-white mb-2 flex items-center">
+                                    <i class="fas fa-cloud text-blue-400 mr-2"></i>
+                                    Air Quality Modeling
+                                </h5>
+                                <p class="text-sm text-slate-300">Advanced modeling to assess and predict air pollution levels.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Enhanced Expertise Card 5 -->
+                <div class="bg-secondary/95 backdrop-blur-sm text-slate-200 p-8 rounded-2xl shadow-xl card-hover fade-in-up animate-delay-700 relative overflow-hidden group border border-dark">
+                    <div class="absolute inset-0 bg-gradient-to-br from-purple-500/10 to-indigo-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <div class="relative z-10">
+                        <div class="w-16 h-16 bg-gradient-to-br from-purple-500 to-indigo-500 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                            <i class="fas fa-chart-line text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4 text-white group-hover:text-purple transition-colors duration-300">
+                            Environmental Monitoring & Modeling
+                        </h3>
+                        <div class="space-y-4">
+                            <div>
+                                <h5 class="font-semibold text-white mb-2 flex items-center">
+                                    <i class="fas fa-satellite-dish text-purple mr-2"></i>
+                                    Continuous Monitoring
+                                </h5>
+                                <p class="text-sm text-slate-300">Real-time tracking of environmental indicators and compliance.</p>
+                            </div>
+                            <div>
+                                <h5 class="font-semibold text-white mb-2 flex items-center">
+                                    <i class="fas fa-brain text-indigo-400 mr-2"></i>
+                                    Predictive Modeling
+                                </h5>
+                                <p class="text-sm text-slate-300">Advanced modeling for proactive environmental management.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Enhanced Expertise Card 6 -->
+                <div class="bg-secondary/95 backdrop-blur-sm text-slate-200 p-8 rounded-2xl shadow-xl card-hover fade-in-up animate-delay-800 relative overflow-hidden group border border-dark">
+                    <div class="absolute inset-0 bg-gradient-to-br from-orange-500/10 to-red-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <div class="relative z-10">
+                        <div class="w-16 h-16 bg-gradient-to-br from-orange-500 to-red-500 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                            <i class="fas fa-road text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4 text-white group-hover:text-orange transition-colors duration-300">
+                            Transportation & Development
+                        </h3>
+                        <div class="space-y-4">
+                            <div>
+                                <h5 class="font-semibold text-white mb-2 flex items-center">
+                                    <i class="fas fa-route text-orange mr-2"></i>
+                                    Transportation Infrastructure
+                                </h5>
+                                <p class="text-sm text-slate-300">Planning and executing efficient transportation systems.</p>
+                            </div>
+                            <div>
+                                <h5 class="font-semibold text-white mb-2 flex items-center">
+                                    <i class="fas fa-hammer text-red-400 mr-2"></i>
+                                    Construction Projects
+                                </h5>
+                                <p class="text-sm text-slate-300">Expert guidance for large-scale development initiatives.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Project Lifecycle Section -->
+    <section class="py-16 bg-primary">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-4xl lg:text-5xl font-extrabold text-white mb-12">Our Project Lifecycle</h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="flex flex-col items-center p-6 bg-secondary rounded-2xl shadow-xl card-hover border border-dark vibrant-glow">
+                    <div class="text-accent text-5xl font-bold mb-4">1</div>
+                    <h3 class="text-2xl font-bold text-white mb-2">Planning</h3>
+                    <p class="text-slate-300">Initial assessment and strategic project formulation.</p>
+                </div>
+                <div class="flex flex-col items-center p-6 bg-secondary rounded-2xl shadow-xl card-hover border border-dark vibrant-glow">
+                    <div class="text-accent text-5xl font-bold mb-4">2</div>
+                    <h3 class="text-2xl font-bold text-white mb-2">Design</h3>
+                    <p class="text-slate-300">Detailed engineering and architectural design phases.</p>
+                </div>
+                <div class="flex flex-col items-center p-6 bg-secondary rounded-2xl shadow-xl card-hover border border-dark vibrant-glow">
+                    <div class="text-accent text-5xl font-bold mb-4">3</div>
+                    <h3 class="text-2xl font-bold text-white mb-2">Execution</h3>
+                    <p class="text-slate-300">On-site implementation and project management.</p>
+                </div>
+                <div class="flex flex-col items-center p-6 bg-secondary rounded-2xl shadow-xl card-hover border border-dark vibrant-glow">
+                    <div class="text-accent text-5xl font-bold mb-4">4</div>
+                    <h3 class="text-2xl font-bold text-white mb-2">Monitoring</h3>
+                    <p class="text-slate-300">Continuous oversight and performance evaluation.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Samudyata? Section -->
+    <section id="why-choose-us" class="py-16 bg-secondary text-white">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-4xl lg:text-5xl font-extrabold mb-12">Why Choose Samudyata?</h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Reason 1 -->
+                <div class="flex flex-col items-center p-8 bg-primary text-slate-200 rounded-lg shadow-lg hover-effect border border-dark">
+                    <div class="text-success text-6xl mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 512 512" fill="currentColor" class="inline-block text-6xl"><path d="M416 336C400.17 336 288 368 288 368s-112.17-32-128-32a128 128 0 0 0 0 256c15.83 0 128-32 128-32s112.17 32 128 32a128 128 0 0 0 0-256zM256 16C128 16 32 176 32 176s96 160 224 160s224-160 224-160S384 16 256 16z"/></svg>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3 text-white">Sustainable Solutions</h3>
+                    <p class="text-slate-300">Focused on long-term environmental and social benefits.</p>
+                </div>
+                <!-- Reason 2 -->
+                <div class="flex flex-col items-center p-8 bg-primary text-slate-200 rounded-lg shadow-lg hover-effect border border-dark">
+                    <div class="text-success text-6xl mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 512 512" fill="currentColor" class="inline-block text-6xl"><path d="M384 32H128c-17.6 0-32 14.4-32 32v416l192-96l192 96V64c0-17.6-14.4-32-32-32zM384 416l-128-64l-128 64V64h256v352z"/></svg>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3 text-white">Expert Consultancy</h3>
+                    <p class="text-slate-300">Experienced professionals delivering high-quality advice.</p>
+                </div>
+                <!-- Reason 3 -->
+                <div class="flex flex-col items-center p-8 bg-primary text-slate-200 rounded-lg shadow-lg hover-effect border border-dark">
+                    <div class="text-success text-6xl mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 512 512" fill="currentColor" class="inline-block text-6xl"><path d="M112 400v-16a32 32 0 0 1 32-32h224a32 32 0 0 1 32 32v16H112zM384 128L315.63 250.31A32 32 0 0 1 288 272H224a32 32 0 0 1-27.63-21.69L128 128h256zM464 96a16 16 0 0 0-16-16H64a16 16 0 0 0-16 16a32 32 0 0 0 32 32l64 128h256l64-128a32 32 0 0 0 32-32zM432 416H80v-32a48 48 0 0 1 48-48h256a48 48 0 0 1 48 48z"/></svg>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3 text-white">Comprehensive Services</h3>
+                    <p class="text-slate-300">From infrastructure to environmental management.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-16 bg-primary">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-4xl lg:text-5xl font-extrabold text-white mb-4">Our Projects</h2>
+            <p class="text-xl mb-12 text-slate-300">Showcasing our commitment to excellence and sustainability across various domains.</p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Visible Projects (First 3) -->
+                
+                <div class="bg-secondary rounded-lg shadow-xl overflow-hidden card-hover border border-dark vibrant-glow">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-white mb-2">Goodyear Nitrate Treatment System</h3>
+                        <p class="text-sm text-slate-400 mb-4">BY ADMIN | Design Project | June 2021</p>
+                        <p class="text-slate-300 mb-4">Location: USA. A key project in design project by Samudyata Infra Solutions.</p>
+                        <a href="#" class="text-accent font-semibold hover:text-accent-cyan transition-colors duration-300">Read More &rarr;</a>
+                    </div>
+                </div>
+    
+                <div class="bg-secondary rounded-lg shadow-xl overflow-hidden card-hover border border-dark vibrant-glow">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-white mb-2">ESIA for Morena Town MPUDP</h3>
+                        <p class="text-sm text-slate-400 mb-4">BY ADMIN | ESIA Study | June 2020</p>
+                        <p class="text-slate-300 mb-4">Location: Madhya Pradesh. A key project in esia study by Samudyata Infra Solutions.</p>
+                        <a href="#" class="text-accent font-semibold hover:text-accent-cyan transition-colors duration-300">Read More &rarr;</a>
+                    </div>
+                </div>
+    
+                <div class="bg-secondary rounded-lg shadow-xl overflow-hidden card-hover border border-dark vibrant-glow">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-white mb-2">NTUA 5 Lift Stations Design</h3>
+                        <p class="text-sm text-slate-400 mb-4">BY ADMIN | Design Project | October 2020</p>
+                        <p class="text-slate-300 mb-4">Location: USA. A key project in design project by Samudyata Infra Solutions.</p>
+                        <a href="#" class="text-accent font-semibold hover:text-accent-cyan transition-colors duration-300">Read More &rarr;</a>
+                    </div>
+                </div>
+    
+            </div>
+            
+            <!-- Hidden Projects Container -->
+            <div id="hiddenProjects" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8 hidden">
+                <div class="bg-secondary rounded-lg shadow-xl overflow-hidden card-hover border border-dark vibrant-glow">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-white mb-2">Kearny AZ Pump Station Design</h3>
+                        <p class="text-sm text-slate-400 mb-4">BY ADMIN | Design Project | October 2020</p>
+                        <p class="text-slate-300 mb-4">Location: USA. A key project in design project by Samudyata Infra Solutions.</p>
+                        <a href="#" class="text-accent font-semibold hover:text-accent-cyan transition-colors duration-300">Read More &rarr;</a>
+                    </div>
+                </div>
+    
+                <div class="bg-secondary rounded-lg shadow-xl overflow-hidden card-hover border border-dark vibrant-glow">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-white mb-2">ATFs Shop Drawings Review</h3>
+                        <p class="text-sm text-slate-400 mb-4">BY ADMIN | Design Project | Ongoing</p>
+                        <p class="text-slate-300 mb-4">Location: USA. A key project in design project by Samudyata Infra Solutions.</p>
+                        <a href="#" class="text-accent font-semibold hover:text-accent-cyan transition-colors duration-300">Read More &rarr;</a>
+                    </div>
+                </div>
+    
+                <div class="bg-secondary rounded-lg shadow-xl overflow-hidden card-hover border border-dark vibrant-glow">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-white mb-2">ATFs Specifications Preparation</h3>
+                        <p class="text-sm text-slate-400 mb-4">BY ADMIN | Design Project | Ongoing</p>
+                        <p class="text-slate-300 mb-4">Location: USA. A key project in design project by Samudyata Infra Solutions.</p>
+                        <a href="#" class="text-accent font-semibold hover:text-accent-cyan transition-colors duration-300">Read More &rarr;</a>
+                    </div>
+                </div>
+    
+                <div class="bg-secondary rounded-lg shadow-xl overflow-hidden card-hover border border-dark vibrant-glow">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-white mb-2">Well 301 Equipping Review</h3>
+                        <p class="text-sm text-slate-400 mb-4">BY ADMIN | Design Project | Ongoing</p>
+                        <p class="text-slate-300 mb-4">Location: USA. A key project in design project by Samudyata Infra Solutions.</p>
+                        <a href="#" class="text-accent font-semibold hover:text-accent-cyan transition-colors duration-300">Read More &rarr;</a>
+                    </div>
+                </div>
+    
+                <div class="bg-secondary rounded-lg shadow-xl overflow-hidden card-hover border border-dark vibrant-glow">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-white mb-2">Gateway WTP O&M Manual Review</h3>
+                        <p class="text-sm text-slate-400 mb-4">BY ADMIN | Design Project | Ongoing</p>
+                        <p class="text-slate-300 mb-4">Location: USA. A key project in design project by Samudyata Infra Solutions.</p>
+                        <a href="#" class="text-accent font-semibold hover:text-accent-cyan transition-colors duration-300">Read More &rarr;</a>
+                    </div>
+                </div>
+    
+                <div class="bg-secondary rounded-lg shadow-xl overflow-hidden card-hover border border-dark vibrant-glow">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-white mb-2">NTUA Arsenic Treatment Design</h3>
+                        <p class="text-sm text-slate-400 mb-4">BY ADMIN | Design of Arsenic Treatment Facilities | Ongoing</p>
+                        <p class="text-slate-300 mb-4">Location: USA. A key project in design of arsenic treatment facilities by Samudyata Infra Solutions.</p>
+                        <a href="#" class="text-accent font-semibold hover:text-accent-cyan transition-colors duration-300">Read More &rarr;</a>
+                    </div>
+                </div>
+    
+                <div class="bg-secondary rounded-lg shadow-xl overflow-hidden card-hover border border-dark vibrant-glow">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-white mb-2">Environmental Management Plan Implementation</h3>
+                        <p class="text-sm text-slate-400 mb-4">BY ADMIN | Implementation of EIA | August 2018</p>
+                        <p class="text-slate-300 mb-4">Location: Telangana. A key project in implementation of eia by Samudyata Infra Solutions.</p>
+                        <a href="#" class="text-accent font-semibold hover:text-accent-cyan transition-colors duration-300">Read More &rarr;</a>
+                    </div>
+                </div>
+    
+                <div class="bg-secondary rounded-lg shadow-xl overflow-hidden card-hover border border-dark vibrant-glow">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-white mb-2">ESIA Framework - Telangana 1</h3>
+                        <p class="text-sm text-slate-400 mb-4">BY ADMIN | ESIA Study | July 2016</p>
+                        <p class="text-slate-300 mb-4">Location: Telangana. A key project in esia study by Samudyata Infra Solutions.</p>
+                        <a href="#" class="text-accent font-semibold hover:text-accent-cyan transition-colors duration-300">Read More &rarr;</a>
+                    </div>
+                </div>
+    
+                <div class="bg-secondary rounded-lg shadow-xl overflow-hidden card-hover border border-dark vibrant-glow">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-white mb-2">ESIA Framework - Telangana 2</h3>
+                        <p class="text-sm text-slate-400 mb-4">BY ADMIN | ESIA Study | July 2016</p>
+                        <p class="text-slate-300 mb-4">Location: Telangana. A key project in esia study by Samudyata Infra Solutions.</p>
+                        <a href="#" class="text-accent font-semibold hover:text-accent-cyan transition-colors duration-300">Read More &rarr;</a>
+                    </div>
+                </div>
+    
+                <div class="bg-secondary rounded-lg shadow-xl overflow-hidden card-hover border border-dark vibrant-glow">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-white mb-2">ESIA Framework - Telangana 3</h3>
+                        <p class="text-sm text-slate-400 mb-4">BY ADMIN | ESIA Study | July 2016</p>
+                        <p class="text-slate-300 mb-4">Location: Telangana. A key project in esia study by Samudyata Infra Solutions.</p>
+                        <a href="#" class="text-accent font-semibold hover:text-accent-cyan transition-colors duration-300">Read More &rarr;</a>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-12">
+                <button id="toggleProjectsBtn" class="bg-accent text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-violet-600 transition duration-300 shadow-lg vibrant-glow">View All Projects</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action Section -->
+    <section class="py-20 bg-accent-cyan text-white text-center">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl lg:text-5xl font-extrabold mb-6">Ready to Build a Greener Future Together?</h2>
+            <p class="text-xl mb-10 opacity-90">Contact Samudyata Infra Solutions today for innovative and sustainable infrastructure solutions.</p>
+            <button id="openAppointmentModal2" class="bg-secondary text-white px-10 py-4 rounded-full text-xl font-semibold hover:bg-primary transition duration-300 shadow-xl vibrant-glow border border-accent/30">Get Your Free Consultation</button>
+        </div>
+    </section>
+
+    <!-- Contact Section / Footer -->
+    <footer id="contact" class="bg-samudyata-blue text-white py-16">
+        <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-12">
+            <!-- Company Info / About -->
+            <div>
+                <div class="flex items-center mb-6">
+                    <img src="logo.jpg" alt="Samudyata Logo" class="h-10 w-auto mr-3">
+                    <span class="text-2xl font-bold">Samudyata</span>
+                </div>
+                <p class="text-gray-300 leading-relaxed mb-4">
+                    Pioneering sustainable infrastructure solutions that build a better tomorrow for communities and the environment.
+                </p>
+                <div class="flex items-center mb-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 512 512" fill="currentColor" class="text-xl mr-3"><path d="M256 16C128 16 32 176 32 176s96 160 224 160s224-160 224-160S384 16 256 16zm0 240a80 80 0 1 1 0-160a80 80 0 0 1 0 160zm176-128c0-44.18-35.82-80-80-80s-80 35.82-80 80s35.82 80 80 80s80-35.82 80-80z"/></svg>
+                    <p class="text-gray-300">Mancherial, Telangana, India</p>
+                </div>
+                <div class="flex items-center mb-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 512 512" fill="currentColor" class="text-xl mr-3"><path d="M480 96a48 48 0 0 0-48-48H80a48 48 0 0 0-48 48v320a48 48 0 0 0 48 48h352a48 48 0 0 0 48-48V96zm-48 320H80V96h352zM256 224a128 128 0 0 0-128 128v160a160 160 0 0 0 160 160h192a16 16 0 0 0 16-16V304a48 48 0 0 0-48-48H256z"/></svg>
+                    <p class="text-gray-300">info@samudyata.com</p>
+                </div>
+                <div class="flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 512 512" fill="currentColor" class="text-xl mr-3"><path d="M464 64H48A32 32 0 0 0 16 96v320a32 32 0 0 0 32 32h416a32 32 0 0 0 32-32V96a32 32 0 0 0-32-32zm-208 0a160 160 0 1 0 0 320a160 160 0 0 0 0-320zM400 320c-16.73 0-32 14.37-32 32v64c0 17.67 14.33 32 32 32h64a32 32 0 0 0 32-32v-64a32 32 0 0 0-32-32z"/></svg>
+                    <p class="text-gray-300">Tel: +91 0029129102320</p>
+                </div>
+            </div>
+
+            <!-- Quick Links -->
+            <div>
+                <h4 class="text-xl font-semibold mb-6">Quick Links</h4>
+                <ul class="space-y-3">
+                    <li><a href="#home" class="text-gray-300 hover:text-samudyata-light-blue transition duration-300">Home</a></li>
+                    <li><a href="#expertise" class="text-gray-300 hover:text-samudyata-light-blue transition duration-300">Our Expertise</a></li>
+                    <li><a href="#projects" class="text-gray-300 hover:text-samudyata-light-blue transition duration-300">Projects</a></li>
+                    <li><a href="#leadership" class="text-gray-300 hover:text-samudyata-light-blue transition duration-300">Leadership</a></li>
+                    <li><a href="#vision" class="text-gray-300 hover:text-samudyata-light-blue transition duration-300">Our Vision</a></li>
+                    <li><a href="#contact" class="text-gray-300 hover:text-samudyata-light-blue transition duration-300">Contact Us</a></li>
+                </ul>
+            </div>
+
+            <!-- Services Overview -->
+            <div>
+                <h4 class="text-xl font-semibold mb-6">Our Expertise Areas</h4>
+                <ul class="space-y-3">
+                    <li><a href="#" class="text-gray-300 hover:text-samudyata-light-blue transition duration-300">Infrastructure Development</a></li>
+                    <li><a href="#" class="text-gray-300 hover:text-samudyata-light-blue transition duration-300">Environmental Management</a></li>
+                    <li><a href="#" class="text-gray-300 hover:text-samudyata-light-blue transition duration-300">Water & Wastewater Solutions</a></li>
+                    <li><a href="#" class="text-gray-300 hover:text-samudyata-light-blue transition duration-300">Waste Management & Air Quality</a></li>
+                    <li><a href="#" class="text-gray-300 hover:text-samudyata-light-blue transition duration-300">Transportation & Development</a></li>
+                </ul>
+            </div>
+
+            <!-- Newsletter & Social -->
+            <div>
+                <h4 class="text-xl font-semibold mb-6">Stay Connected</h4>
+                <p class="text-gray-300 mb-4">Subscribe to our newsletter for the latest updates.</p>
+                <div class="flex mb-6">
+                    <input type="email" id="newsletterEmail" placeholder="Your Email" class="p-3 rounded-l-lg outline-none flex-grow bg-white text-gray-800">
+                    <button id="subscribeBtn" class="bg-samudyata-light-blue px-5 py-3 rounded-r-lg hover:bg-blue-600 transition duration-300 font-semibold">Subscribe</button>
+                </div>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-300 hover:text-samudyata-light-blue transition duration-300 text-3xl">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 512 512" fill="currentColor" class="inline-block text-3xl"><path d="M480 257.35c0-123.7-100-224-224-224S32 133.65 32 257.35c0 111.45 81.25 203.49 187.5 221.09V334.65H202.45V257.35h-54.89v-77.3h54.89v-58.82c0-54.89 33.32-84.7 82.7-84.7c23.63 0 44.11 1.68 50.04 2.45v68.3h-40.42c-29.62 0-35.39 18.27-35.39 36.31v47.26h78.37l-12.45 77.3h-65.92V478.44C398.75 460.84 480 368.89 480 257.35z"/></svg>
+                    </a>
+                    <a href="#" class="text-gray-300 hover:text-samudyata-light-blue transition duration-300 text-3xl">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 512 512" fill="currentColor" class="inline-block text-3xl"><path d="M480 32H32A32 32 0 0 0 0 64v384a32 32 0 0 0 32 32h448a32 32 0 0 0 32-32V64a32 32 0 0 0-32-32zm-32 384H64V96h384zm-32-224c-16 0-32 16-32 32v96a32 32 0 0 0 32 32h96a32 32 0 0 0 32-32v-96c0-16-16-32-32-32h-96zm-96-32c-16 0-32 16-32 32v96a32 32 0 0 0 32 32h96a32 32 0 0 0 32-32v-96c0-16-16-32-32-32h-96z"/></svg>
+                    </a>
+                    <a href="#" class="text-gray-300 hover:text-samudyata-light-blue transition duration-300 text-3xl">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 512 512" fill="currentColor" class="inline-block text-3xl"><path d="M496 109.53a196.48 196.48 0 0 1-56.57 15.3c-20.09 22.42-49.12 37-82.68 40.54a200.75 200.75 0 0 1-133.56-48.4c-70.52-47.38-95.34-114.73-95.34-114.73C65.55 137.93 42 201.21 42 201.21s31.9 146.47 132.06 195.91c78.9 39.11 161.76 17.52 189.9 6.84c36.21-13.6 63.66-39.77 82.26-70.53a473.12 473.12 0 0 0-34.61-3.69c-27.69 0-54.89 12.39-72 32c-2.42 2.62-5.06 4.9-7.85 7c-17.65 15.65-38.64 25-60.15 28c-4.4 3.73-9.15 7-14 9.94c-20.73 12.35-43.5 19.06-67.92 19.06c-54.19 0-96-38.56-96-88c0-42.23 28.53-76 64-76c24.63 0 49.37 13.92 68.32 39.52c5.94 8.08 12.56 15 19.7 20.6c11.59 9.17 25.1 14.88 39.98 16.96C330.45 288 360 288 360 288z"/></svg>
+                    </a>
+                    <a href="#" class="text-gray-300 hover:text-samudyata-light-blue transition duration-300 text-3xl">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 512 512" fill="currentColor" class="inline-block text-3xl"><path d="M344 32H168c-23.72 0-43.09 19.27-43.09 43.09v277.82c0 23.72 19.37 43.09 43.09 43.09h176c23.72 0 43.09-19.27 43.09-43.09V75.09C387.09 51.27 367.72 32 344 32zm-24 336H192v-32h128v32zm-96-224v128h-32v-128h32zm160 0v128h-32v-128h32z"/></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="border-t border-gray-700 mt-12 pt-8 text-center text-gray-400">
+            &copy; 2025 Samudyata Infra Solutions. All rights reserved.
+        </div>
+    </footer>
+
+    <!-- Appointment Modal Structure -->
+    <div id="appointmentModal" class="modal">
+        <div class="modal-content">
+            <div class="flex justify-between items-center mb-6">
+                <h2 class="text-3xl font-bold text-white">Schedule an Appointment</h2>
+                <button id="closeModalBtn" class="text-slate-400 hover:text-white transition duration-300 text-3xl">
+                    &times; <!-- Times icon for close -->
+                </button>
+            </div>
+            <form id="appointmentForm" class="space-y-6">
+                <div>
+                    <label for="name" class="block text-lg font-medium text-white mb-2">Your Name</label>
+                    <input type="text" id="name" name="name" class="w-full px-4 py-3 border border-dark bg-primary text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-accent" placeholder="Enter your name" required>
+                </div>
+                <div>
+                    <label for="email" class="block text-lg font-medium text-white mb-2">Email Address</label>
+                    <input type="email" id="email" name="email" class="w-full px-4 py-3 border border-dark bg-primary text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-accent" placeholder="Enter your email" required>
+                </div>
+                <div>
+                    <label for="mobile" class="block text-lg font-medium text-white mb-2">Mobile Number</label>
+                    <input type="tel" id="mobile" name="mobile" class="w-full px-4 py-3 border border-dark bg-primary text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-accent" placeholder="e.g., +91 98765 43210" pattern="[0-9+ ]+" required>
+                </div>
+                <div>
+                    <label for="purpose" class="block text-lg font-medium text-white mb-2">Purpose of Appointment</label>
+                    <textarea id="purpose" name="purpose" rows="4" class="w-full px-4 py-3 border border-dark bg-primary text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-accent" placeholder="Briefly describe your purpose" required></textarea>
+                </div>
+                <div class="flex justify-end space-x-4">
+                    <button type="button" id="cancelAppointmentBtn" class="px-6 py-3 rounded-full text-lg font-semibold border-2 border-slate-600 text-slate-300 hover:bg-slate-700 transition duration-300">Cancel</button>
+                    <button type="submit" class="bg-accent text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-violet-600 transition duration-300 shadow-lg vibrant-glow">Submit Appointment</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Enhanced Mobile Menu Toggle
+            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+            const mobileMenu = document.getElementById('mobileMenu');
+            
+            if (mobileMenuBtn && mobileMenu) {
+                mobileMenuBtn.addEventListener('click', function() {
+                    mobileMenu.classList.toggle('hidden');
+                    const icon = mobileMenuBtn.querySelector('svg path');
+                    if (mobileMenu.classList.contains('hidden')) {
+                        icon.setAttribute('d', 'M4 6h16M4 12h16M4 18h16');
+                    } else {
+                        icon.setAttribute('d', 'M6 18L18 6M6 6l12 12');
+                    }
+                });
+                
+                // Close mobile menu when clicking on nav links
+                const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+                mobileNavLinks.forEach(link => {
+                    link.addEventListener('click', () => {
+                        mobileMenu.classList.add('hidden');
+                        mobileMenuBtn.querySelector('svg path').setAttribute('d', 'M4 6h16M4 12h16M4 18h16');
+                    });
+                });
+            }
+            
+            // Smooth scrolling for navigation links
+            const navLinks = document.querySelectorAll('a[href^="#"]');
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetSection = document.querySelector(targetId);
+                    if (targetSection) {
+                        const headerHeight = document.querySelector('header').offsetHeight;
+                        const targetPosition = targetSection.offsetTop - headerHeight;
+                        window.scrollTo({
+                            top: targetPosition,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+            
+            // Enhanced scroll animations
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0) translateX(0)';
+                    }
+                });
+            }, observerOptions);
+            
+            // Observe all animated elements
+            const animatedElements = document.querySelectorAll('.fade-in-up, .fade-in-left, .fade-in-right');
+            animatedElements.forEach(el => observer.observe(el));
+            
+            // Project Section Toggle Logic
+            const toggleProjectsBtn = document.getElementById('toggleProjectsBtn');
+            const hiddenProjectsContainer = document.getElementById('hiddenProjects');
+
+            if (toggleProjectsBtn && hiddenProjectsContainer) {
+                toggleProjectsBtn.addEventListener('click', function() {
+                    hiddenProjectsContainer.classList.toggle('hidden');
+                    if (hiddenProjectsContainer.classList.contains('hidden')) {
+                        toggleProjectsBtn.innerHTML = '<i class="fas fa-eye mr-2"></i>View All Projects';
+                    } else {
+                        toggleProjectsBtn.innerHTML = '<i class="fas fa-eye-slash mr-2"></i>Show Less Projects';
+                    }
+                    if (!hiddenProjectsContainer.classList.contains('hidden')) {
+                        setTimeout(() => {
+                            hiddenProjectsContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        }, 100);
+                    }
+                });
+            }
+
+            // Enhanced Appointment Modal Logic
+            const openAppointmentModalBtn = document.getElementById('openAppointmentModal');
+            const openAppointmentModalBtn2 = document.getElementById('openAppointmentModal2');
+            const openAppointmentModalMobile = document.getElementById('openAppointmentModalMobile');
+            const appointmentModal = document.getElementById('appointmentModal');
+            const closeModalBtn = document.getElementById('closeModalBtn');
+            const cancelAppointmentBtn = document.getElementById('cancelAppointmentBtn');
+            const appointmentForm = document.getElementById('appointmentForm');
+
+            function openModal() {
+                appointmentModal.classList.add('open');
+                document.body.style.overflow = 'hidden';
+            }
+
+            function closeModal() {
+                appointmentModal.classList.remove('open');
+                document.body.style.overflow = '';
+            }
+
+            // Event listeners to open the modal
+            [openAppointmentModalBtn, openAppointmentModalBtn2, openAppointmentModalMobile].forEach(btn => {
+                if (btn) {
+                    btn.addEventListener('click', openModal);
+                }
+            });
+
+            // Event listeners to close the modal
+            if (closeModalBtn) closeModalBtn.addEventListener('click', closeModal);
+            if (cancelAppointmentBtn) cancelAppointmentBtn.addEventListener('click', closeModal);
+            
+            // Close modal when clicking outside
+            if (appointmentModal) {
+                appointmentModal.addEventListener('click', function(event) {
+                    if (event.target === appointmentModal) {
+                        closeModal();
+                    }
+                });
+            }
+
+            // Enhanced form submission
+            if (appointmentForm) {
+                appointmentForm.addEventListener('submit', async function(event) {
+                    event.preventDefault();
+                    
+                    // Show loading state
+                    const submitBtn = appointmentForm.querySelector('button[type="submit"]');
+                    const originalText = submitBtn.innerHTML;
+                    submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i>Submitting...';
+                    submitBtn.disabled = true;
+                    
+                    try {
+                        const formData = {
+                            name: document.getElementById('name').value,
+                            email: document.getElementById('email').value,
+                            mobile: document.getElementById('mobile').value,
+                            purpose: document.getElementById('purpose').value
+                        };
+                        
+                        const response = await fetch('http://localhost:3000/api/appointment', {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json'
+                            },
+                            body: JSON.stringify(formData)
+                        });
+                        
+                        const result = await response.json();
+                        
+                        if (result.success) {
+                            // Show success message
+                            submitBtn.innerHTML = '<i class="fas fa-check mr-2"></i>Submitted!';
+                            submitBtn.classList.add('bg-green-600');
+                            
+                            setTimeout(() => {
+                                closeModal();
+                                appointmentForm.reset();
+                                submitBtn.innerHTML = originalText;
+                                submitBtn.disabled = false;
+                                submitBtn.classList.remove('bg-green-600');
+                            }, 1500);
+                        } else {
+                            throw new Error(result.message);
+                        }
+                    } catch (error) {
+                        console.error('Error submitting appointment:', error);
+                        submitBtn.innerHTML = '<i class="fas fa-times mr-2"></i>Error - Try Again';
+                        submitBtn.classList.add('bg-red-600');
+                        
+                        setTimeout(() => {
+                            submitBtn.innerHTML = originalText;
+                            submitBtn.disabled = false;
+                            submitBtn.classList.remove('bg-red-600');
+                        }, 3000);
+                    }
+                });
+            }
+            
+            // Newsletter subscription
+            const subscribeBtn = document.getElementById('subscribeBtn');
+            const newsletterEmail = document.getElementById('newsletterEmail');
+            
+            if (subscribeBtn && newsletterEmail) {
+                subscribeBtn.addEventListener('click', async function(e) {
+                    e.preventDefault();
+                    
+                    const email = newsletterEmail.value.trim();
+                    if (!email) {
+                        alert('Please enter your email address');
+                        return;
+                    }
+                    
+                    const originalText = subscribeBtn.innerHTML;
+                    subscribeBtn.innerHTML = 'Subscribing...';
+                    subscribeBtn.disabled = true;
+                    
+                    try {
+                        const response = await fetch('http://localhost:3000/api/newsletter', {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json'
+                            },
+                            body: JSON.stringify({ email })
+                        });
+                        
+                        const result = await response.json();
+                        
+                        if (result.success) {
+                            subscribeBtn.innerHTML = 'Subscribed!';
+                            newsletterEmail.value = '';
+                            setTimeout(() => {
+                                subscribeBtn.innerHTML = originalText;
+                                subscribeBtn.disabled = false;
+                            }, 2000);
+                        } else {
+                            throw new Error(result.message);
+                        }
+                    } catch (error) {
+                        console.error('Error subscribing:', error);
+                        subscribeBtn.innerHTML = 'Error - Try Again';
+                        setTimeout(() => {
+                            subscribeBtn.innerHTML = originalText;
+                            subscribeBtn.disabled = false;
+                        }, 3000);
+                    }
+                });
+            }
+            
+            // Add active nav link highlighting
+            window.addEventListener('scroll', () => {
+                const sections = document.querySelectorAll('section[id]');
+                const navLinks = document.querySelectorAll('.nav-link');
+                
+                let current = '';
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop - 100;
+                    if (window.scrollY >= sectionTop) {
+                        current = section.getAttribute('id');
+                    }
+                });
+                
+                navLinks.forEach(link => {
+                    link.classList.remove('bg-white/20');
+                    if (link.getAttribute('href') === `#${current}`) {
+                        link.classList.add('bg-white/20');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
